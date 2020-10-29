@@ -2,7 +2,7 @@
 clear
 echo
 echo -e "Você tem 5 segundos para inserir o usuário  "
-read -p  "Usuário: " -t 5 usuario
+read -p "Usuário: " -t 5 usuario
 echo
 read -sp "Digite uma senha: " senha
 echo
