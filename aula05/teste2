@@ -1,0 +1,17 @@
+# Operadores do bash
+
+## N=ºmericos
+= Igual 
+!= diferente de
+-n == n=£o nula
+-lt == menor que
+-gt == maior que
+-le == menor igual
+-ge == maior igual
+-eq == igual
+-ne == diferente
+
+## L=³gicos
+~= NOT
+&& AND
+|| OR
