@@ -1,5 +1,4 @@
 #!/bin/bash
-# /home/cristian/github/pastaTeste prova.txt estou
 clear;
 echo;
 
