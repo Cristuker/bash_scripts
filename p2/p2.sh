@@ -2,39 +2,19 @@
 clear;
 echo;
 
-Encerrar() {
+echo "Usuário informado: " $1;
+
+if [ $# != "1" ]; then
+    echo "Informe o número de parametros correto!";
     sleep 3;
     exit;
-}
+fi
 
-read -p "Informe o Nome do Usuario Linux : " usuario
-echo;
-if [ -z $usuario ]; then
-    echo "Informe um Usuario Linux Correto";
-    Encerrar;
-fi 
-
-if [ -d $usuario ]; then # testa se é um diretório && se o arquivo existe && palavra não é nula
-   ls $usuario;
+if [ "$(cat /etc/passwd | grep -i $1 | cut -d ':' -f 1 | wc -l)" != "0" ]; then
+    cd /home/$1
+    ls -la | grep -i --color $1
 else
-    echo "Esse Usuario Nao Existe!";
-    Encerrar;
+    echo "Usuário não existe, informe um usuário valido"
+    sleep 3;
+    exit;
 fi
-
-cd $rota;
-
-if [ -e $arquivo ]; then # pra testar o arquivo vc tem que estar na pasta dele
-    if [ -s $arquivo ]; then
-        grep -n -i --color "$palavra" prova.txt
-    else
-        echo "O arquivo informado está vázio!";
-        EncerraPrograma;
-    fi
-else 
-    echo "O arquivo informa não existe!";
-    Encerrar;
-fi
-
-# if [ -n $palavra ]
-# else
-# fi
